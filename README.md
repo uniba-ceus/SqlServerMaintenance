@@ -42,3 +42,8 @@ The main procedures which are uses to trigger backup jobs or to embed this frame
 ## Installation ##
 
 For installation create a database and use provided deployment script. Adopt server and database name in connection definition for your requirements. After deployment you can configure your BackupJobs and schedule execution in SQL Server agent.
+
+## Post Notes ##
+
+* Author: Thomas Joscht
+* Publish Date: 13.11.2020
