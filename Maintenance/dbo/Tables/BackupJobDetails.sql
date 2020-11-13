@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[BackupJobDetails] (
+	[Id] INT IDENTITY(1, 1) NOT NULL
+	,[BackupJobId] INT NOT NULL
+	,[OperationId] UNIQUEIDENTIFIER NOT NULL
+	,[StartTime] DATETIME NOT NULL
+	,[EndTime] DATETIME NULL
+	,[Status] NVARCHAR(255) NOT NULL
+	,CONSTRAINT [PK_BackupJobDetails] PRIMARY KEY CLUSTERED ([Id] ASC)
+	);

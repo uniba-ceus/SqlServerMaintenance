@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Maintenance</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{dc4d7445-1483-4dc0-8ee8-059cac0c43e6}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Maintenance</RootNamespace>
+    <AssemblyName>Maintenance</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Log.sql" />
+    <Build Include="dbo\Functions\fn_newline.sql" />
+    <Build Include="dbo\Functions\fn_getLogs.sql" />
+    <Build Include="dbo\Functions\fn_getErrors.sql" />
+    <Build Include="dbo\Functions\fn_getBackupTimestamp.sql" />
+    <Build Include="dbo\Functions\fn_escape.sql" />
+    <Build Include="dbo\Stored Procedures\sp_warn.sql" />
+    <Build Include="dbo\Stored Procedures\sp_log.sql" />
+    <Build Include="dbo\Stored Procedures\sp_info.sql" />
+    <Build Include="dbo\Stored Procedures\sp_error.sql" />
+    <Build Include="dbo\Stored Procedures\sp_debug.sql" />
+    <Build Include="dbo\Stored Procedures\sp_createBackup.sql" />
+    <Build Include="dbo\Stored Procedures\sp_checkViews.sql" />
+    <Build Include="dbo\Stored Procedures\sp_shrinkDatabase.sql" />
+    <Build Include="dbo\Stored Procedures\sp_executeSqlLinked.sql" />
+    <Build Include="dbo\Tables\BackupCheckDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_genFullBackupJob.sql" />
+    <Build Include="dbo\Tables\ViewCheckDetails.sql" />
+    <Build Include="dbo\Tables\BackupJobs.sql" />
+    <Build Include="dbo\Tables\BackupDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_runBackupJob.sql" />
+    <Build Include="dbo\Tables\BackupJobDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_restoreVerifyBackup.sql" />
+    <Build Include="dbo\Stored Procedures\sp_runBackupJobByName.sql" />
+    <Build Include="dbo\Stored Procedures\sp_getRecoveryModel.sql" />
+    <Build Include="dbo\Stored Procedures\sp_getServerProductVersion.sql" />
+    <Build Include="dbo\Functions\fn_splitString.sql" />
+    <Build Include="dbo\Functions\fn_preparePath.sql" />
+    <Build Include="dbo\Functions\fn_prepareName.sql" />
+    <Build Include="dbo\Stored Procedures\sp_checkDatabaseViews.sql" />
+    <Build Include="dbo\Stored Procedures\sp_createBackups.sql" />
+    <Build Include="dbo\Stored Procedures\sp_trace.sql" />
+    <Build Include="dbo\Functions\fn_formatLog.sql" />
+    <Build Include="dbo\Tables\Config.sql" />
+    <Build Include="dbo\Functions\fn_getConfig.sql" />
+    <Build Include="dbo\Stored Procedures\sp_getFreeDriveSpace.sql" />
+    <Build Include="dbo\Stored Procedures\sp_notifyOperator.sql" />
+    <Build Include="dbo\Stored Procedures\sp_purgeBackupHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_databaseExists.sql" />
+    <Build Include="dbo\Stored Procedures\sp_fileExists.sql" />
+    <Build Include="dbo\Functions\fn_getFileNameFromPath.sql" />
+    <Build Include="dbo\Functions\fn_getFileNameWithoutExtension.sql" />
+    <Build Include="dbo\Functions\fn_getBackupFileName.sql" />
+    <Build Include="dbo\Stored Procedures\sp_deleteFile.sql" />
+    <Build Include="dbo\Stored Procedures\sp_getDatabaseNames.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Update.scmp" />
+    <None Include="Deploy.scmp" />
+    <Build Include="dbo\Stored Procedures\sp_getBackups.sql" />
+    <Build Include="dbo\Stored Procedures\sp_cleanBackupFiles.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="..\Resources\master.dacpac">
+      <HintPath>..\Resources\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>True</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="..\Resources\msdb.dacpac">
+      <HintPath>..\Resources\msdb.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>True</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>cd "$(ProjectDir)"
+call "$(ProjectDir)..\SqlFormatter\SqlFormatter.exe" * /r+ /b- /ae /mw:120</PreBuildEvent>
+  </PropertyGroup>
+</Project>

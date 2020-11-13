@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[BackupCheckDetails] (
+	[Id] INT IDENTITY(1, 1) NOT NULL
+	,[ServerName] NVARCHAR(500) NOT NULL
+	,[DatabaseName] NVARCHAR(500) NOT NULL
+	,[OperationId] UNIQUEIDENTIFIER NOT NULL
+	,[BackupFileName] NVARCHAR(1024) NOT NULL
+	,[StartTime] DATETIME NOT NULL
+	,[EndTime] DATETIME NULL
+	,[Status] NVARCHAR(255) NOT NULL
+	,CONSTRAINT [PK_BackupCheckDetails] PRIMARY KEY CLUSTERED ([Id] ASC)
+	);

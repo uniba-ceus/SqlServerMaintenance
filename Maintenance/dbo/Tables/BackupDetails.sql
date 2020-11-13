@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[BackupDetails] (
+	[Id] INT IDENTITY(1, 1) NOT NULL
+	,[ServerName] NVARCHAR(500) CONSTRAINT [DF_Backups_ServerName] DEFAULT(@@servername) NOT NULL
+	,[DatabaseName] NVARCHAR(1024) NOT NULL
+	,[OperationId] UNIQUEIDENTIFIER NOT NULL
+	,[BackupFileName] NVARCHAR(1024) NULL
+	,[BackupType] NVARCHAR(50) NOT NULL
+	,[BaseDirectory] NVARCHAR(1024) NOT NULL
+	,[StartTime] DATETIME NOT NULL
+	,[EndTime] DATETIME NULL
+	,[RetainDays] INT NOT NULL
+	,[Status] NVARCHAR(255) NOT NULL CONSTRAINT [PK_BackupDetails] PRIMARY KEY CLUSTERED ([Id] ASC)
+	);

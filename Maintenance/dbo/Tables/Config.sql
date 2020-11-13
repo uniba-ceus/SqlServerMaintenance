@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[Config] (
+	[Id] INT IDENTITY(1, 1) NOT NULL
+	,[ServerName] NVARCHAR(500) CONSTRAINT [DF_Config_ServerName] DEFAULT(@@servername) NOT NULL
+	,[Key] NVARCHAR(255) NOT NULL
+	,[Value] NVARCHAR(4000) NULL
+	,[Description] NVARCHAR(4000) NULL
+	,CONSTRAINT [PK__Config__C41E02887ED49DF0] PRIMARY KEY CLUSTERED ([Id] ASC)
+	,CONSTRAINT [UQ_Key] UNIQUE NONCLUSTERED (
+		[ServerName]
+		,[Key]
+		)
+	);

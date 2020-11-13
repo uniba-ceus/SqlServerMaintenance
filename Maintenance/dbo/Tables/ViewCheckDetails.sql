@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[ViewCheckDetails] (
+	[Id] INT IDENTITY(1, 1) NOT NULL
+	,[ServerName] NVARCHAR(500) CONSTRAINT [DF_ViewChecks_ServerName] DEFAULT(@@servername) NOT NULL
+	,[DatabaseName] NVARCHAR(500) NOT NULL
+	,[OperationId] UNIQUEIDENTIFIER NOT NULL
+	,[StartTime] DATETIME NOT NULL
+	,[EndTime] DATETIME NULL
+	,[Status] NVARCHAR(255) NOT NULL
+	,CONSTRAINT [PK_ViewChecks] PRIMARY KEY CLUSTERED ([Id] ASC)
+	);
