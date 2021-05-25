@@ -9,7 +9,7 @@
   </SourceModelProvider>
   <TargetModelProvider>
     <ConnectionBasedModelProvider>
-      <ConnectionString>Data Source=localhost;Initial Catalog=Maintenance;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</ConnectionString>
+      <ConnectionString>Data Source=CEUS-C1-DB;Initial Catalog=Maintenance;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False</ConnectionString>
     </ConnectionBasedModelProvider>
   </TargetModelProvider>
   <SchemaCompareSettingsService>
@@ -34,6 +34,10 @@
       </PropertyElementName>
       <PropertyElementName>
         <Name>BackupDatabaseBeforeChanges</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>IgnoreIndexesStatisticsOnEnclaveEnabledColumns</Name>
         <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
@@ -62,6 +66,10 @@
       </PropertyElementName>
       <PropertyElementName>
         <Name>DisableAndReenableDdlTriggers</Name>
+        <Value>True</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>DisableIndexesForDataPhase</Name>
         <Value>True</Value>
       </PropertyElementName>
       <PropertyElementName>
@@ -106,6 +114,10 @@
       </PropertyElementName>
       <PropertyElementName>
         <Name>GenerateSmartDefaults</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>HashObjectNamesInLogs</Name>
         <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
@@ -154,6 +166,10 @@
       </PropertyElementName>
       <PropertyElementName>
         <Name>IgnorePartitionSchemes</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>IgnoreTablePartitionOptions</Name>
         <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
@@ -265,8 +281,20 @@
         <Value>True</Value>
       </PropertyElementName>
       <PropertyElementName>
+        <Name>PreserveIdentityLastValues</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
         <Name>RegisterDataTierApplication</Name>
         <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>RebuildIndexesOfflineForDataPhase</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>RestoreSequenceCurrentValue</Name>
+        <Value>True</Value>
       </PropertyElementName>
       <PropertyElementName>
         <Name>ScriptDatabaseCollation</Name>
@@ -302,7 +330,7 @@
       </PropertyElementName>
       <PropertyElementName>
         <Name>TargetConnectionString</Name>
-        <Value>Data Source=localhost;Initial Catalog=Maintenance;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;Application Name="Microsoft SQL Server Data Tools, Schema Compare"</Value>
+        <Value>Data Source=CEUS-C1-DB;Initial Catalog=Maintenance;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;Application Name="Microsoft SQL Server Data Tools, Schema Compare"</Value>
       </PropertyElementName>
       <PropertyElementName>
         <Name>TreatVerificationErrorsAsWarnings</Name>
@@ -327,6 +355,10 @@
       <PropertyElementName>
         <Name>AllowDropBlockingAssemblies</Name>
         <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>DoNotEvaluateSqlCmdVariables</Name>
+        <Value>True</Value>
       </PropertyElementName>
       <PropertyElementName>
         <Name>DoNotDropAggregates</Name>
@@ -397,6 +429,22 @@
         <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
+        <Name>IgnoreDatabaseWorkloadGroups</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>DoNotDropDatabaseWorkloadGroups</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>IgnoreWorkloadClassifiers</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>DoNotDropWorkloadClassifiers</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
         <Name>DoNotDropDefaults</Name>
         <Value>False</Value>
       </PropertyElementName>
@@ -429,11 +477,23 @@
         <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
+        <Name>DoNotDropExternalStreamingJobs</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
         <Name>DoNotDropExternalTables</Name>
         <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
+        <Name>DoNotDropExternalStreams</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
         <Name>DoNotDropFilegroups</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>DoNotDropFiles</Name>
         <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
@@ -669,7 +729,15 @@
         <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
+        <Name>ExcludeExternalStreamingJobs</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
         <Name>ExcludeExternalTables</Name>
+        <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>ExcludeExternalStreams</Name>
         <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
@@ -679,6 +747,10 @@
       <PropertyElementName>
         <Name>ExcludeFilegroups</Name>
         <Value>False</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>ExcludeFiles</Name>
+        <Value>True</Value>
       </PropertyElementName>
       <PropertyElementName>
         <Name>ExcludeFileTables</Name>

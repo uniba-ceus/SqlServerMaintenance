@@ -110,6 +110,7 @@
     <Build Include="dbo\Functions\fn_getBackupFileName.sql" />
     <Build Include="dbo\Stored Procedures\sp_deleteFile.sql" />
     <Build Include="dbo\Stored Procedures\sp_getDatabaseNames.sql" />
+    <Build Include="dbo\Stored Procedures\sp_setRecoveryModelSimple.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Update.scmp" />

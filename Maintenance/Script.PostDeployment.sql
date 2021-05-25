@@ -17,28 +17,34 @@ USING (
 		'FreeSpaceCheckActive'
 		,N'0'
 		,
-		'1 = execute a check for free space before performing a backup. if the threshold is not reached, the backup process aborts. 0 = no check'
+		'1 = Execute a check for free space before performing a backup. If the threshold is not reached, the backup process aborts. 0 = No check.'
 		)
 		,(
 		'FreeSpaceThresholdMb'
 		,N'50000'
-		,'free space limit for the free space check'
+		,'Free space limit for the free space check.'
 		)
 		,(
 		'FreeSpaceThresholdDrive'
 		,N'S'
-		,'drive to check by the free space check'
+		,'Drive to check by the free space check.'
 		)
 		,(
 		'NotifyOperatorName'
 		,N'Admins'
-		,'name of the database mail operator'
+		,'Name of the database mail operator.'
 		)
 		,(
 		'RestoreVerifyDynamicNamingActive'
 		,N'0'
 		,
-		'1 = appends the backup file name in the database name and the data file name. this avoids collisions of concurrent backup processes. 0 = use default naming'
+		'1 = Appends the backup file name in the database name and the data file name. this avoids collisions of concurrent backup processes. 0 = Use default naming.'
+		)
+		,(
+		'RestoreVerifyTempDirectoryPath'
+		,N'C:\Temp'
+		,
+		'Path to a temporary directory wehre verify command stores the restored data files. This path must be exist. Use only backslashes and no trailing backslash.'
 		)
 	) AS Source([Key], [Value], [Description])
 	ON Target.[Key] = Source.[Key]
