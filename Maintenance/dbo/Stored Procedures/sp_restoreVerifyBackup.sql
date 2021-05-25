@@ -202,6 +202,8 @@ CREATE TABLE tempdb.dbo.TempRestoreFileListOnly(
 		DECLARE @restoreCommand NVARCHAR(2048)
 		DECLARE @counter INT
 
+		DECLARE @restoreVerifyTempDirectoryPath AS NVARCHAR(500) = dbo.fn_getConfig('RestoreVerifyTempDirectoryPath', @serverName)
+
 		SET @counter = 1
 		SET @restoreCommand = 'RESTORE DATABASE [' + @restoreVerifyDbName + '] FROM  DISK = ''' + @backupFileName + 
 			''' WITH  FILE = 1,  NOUNLOAD, REPLACE,  STATS = 10 '
@@ -220,7 +222,7 @@ CREATE TABLE tempdb.dbo.TempRestoreFileListOnly(
 		WHILE @@FETCH_STATUS = 0
 		BEGIN
 			-- Datafile must be moved! NOTE: It is important to use backslashes here!
-			SET @restoreCommand = @restoreCommand + ', MOVE ''' + @logicalBackupFile + ''' TO ''C:\Temp\restored' + CASE 
+			SET @restoreCommand = @restoreCommand + ', MOVE ''' + @logicalBackupFile + ''' TO ''' + @restoreVerifyTempDirectoryPath + '\restored' + CASE 
 					WHEN @restoreVerifyDynamicNamingActive = 1
 						THEN '_' + @restoreVerifyDbName + '_'
 					ELSE ''

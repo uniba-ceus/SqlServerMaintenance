@@ -24,10 +24,10 @@ E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\bin\Debug\Maintenance.p
 E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\bin\Debug\master.dacpac
 E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\bin\Debug\msdb.dacpac
 E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\Maintenance.sqlprojAssemblyReference.cache
+E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\Maintenance.sqlproj.CopyComplete
+E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\Maintenance.dll
+E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\Maintenance.pdb
 E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\Model.xml
 E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\refactor.xml
 E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\postdeploy.sql
 E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\predeploy.sql
-E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\Maintenance.sqlproj.CopyComplete
-E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\Maintenance.dll
-E:\Projekte\Maintenance\SqlServerMaintenance\Maintenance\obj\Debug\Maintenance.pdb
