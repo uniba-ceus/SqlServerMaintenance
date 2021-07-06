@@ -111,7 +111,7 @@ BEGIN
 	BEGIN
 		SET @tmpMsg = 'Nicht genügend freier Speicherplatz vorhanden: ' + CAST(@freeMb AS NVARCHAR(500)) + 
 			' MB frei. Der Grenzwert ist auf ' + CAST(@freeSpaceThresholdMb AS NVARCHAR(500)) + 
-			' MB eingestellt. Backup-Auftrag wid abgebrochen.'
+			' MB eingestellt. Backup-Auftrag wird abgebrochen.'
 
 		EXEC dbo.sp_error @opId
 			,@tmpMsg

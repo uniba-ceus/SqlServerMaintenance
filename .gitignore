@@ -2,3 +2,4 @@
 /.svn
 /Maintenance/*.dbmdl
 /Maintenance/*.jfm
+/Maintenance/obj/Debug
