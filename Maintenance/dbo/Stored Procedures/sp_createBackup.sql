@@ -354,6 +354,8 @@ BEGIN
 		-- EXTENDED VERIFY BACKUP
 		IF @backupSuccess = 1
 			AND @restoreVerify = 1
+			AND (@backupType = 'FULL'
+				OR @backupType = 'FULLCOPYONLY')
 		BEGIN
 			DECLARE @restoreVerifyDynamicNamingActive AS BIT = CAST(dbo.fn_getConfig('restoreVerifyDynamicNamingActive', 
 						@serverName) AS BIT)
